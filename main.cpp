@@ -3,15 +3,15 @@
 #include "tiny_matrix.h"
 
 int main(int argc, char **argv) {
-  TinyMatrix a(5, 5);
+  unsigned int n = 5;
 
-  for (int i = 0; i < 25; i += 1) {
-    a.Set(i/5, i%5, i%16);
+  TinyMatrix a(n, n);
+
+  for (int i = 0; i < (n*n); i += 1) {
+    a.Set(i/n, i%n, i%16);
   }
 
-  for (int i = 0; i < 25; i += 1) {
-    std::cout << static_cast<unsigned int>(a.Get(i/5, i%5)) << std::endl;
-  }
+  a.Output();
 
   return 0;
 }
